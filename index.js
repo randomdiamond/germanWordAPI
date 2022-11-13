@@ -1,10 +1,10 @@
 const express = require("express")
-
+const cors = require('cors')
 const app = express()
 const importData = require("./wordData.json")
 let port = process.env.PORT || 3000
 
-
+app.use(cors())
 app.get("/", (req, res) => {
     res.send(`To get a random word just use the /randomword endpoint: https://germanwordsapi.cyclic.app/randomword`)
 })
